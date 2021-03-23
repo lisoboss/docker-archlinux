@@ -10,3 +10,9 @@ bsdtar -C / -xvf $patched_glibc
 sed -r -i 's/^#?IgnorePkg\s*=\s*(.*)/IgnorePkg = \1 glibc/' /etc/pacman.conf
 
 pacman -Syu --noconfirm
+
+# install neovim
+pacman -S neovim --noconfirm
+ln -sf /usr/bin/nvim /usr/bin/vi
+ln -sf /usr/bin/nvim /usr/bin/vim
+
