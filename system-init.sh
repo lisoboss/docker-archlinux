@@ -1,11 +1,7 @@
 # 更换国内源
-cat >> /etc/pacman.conf <<EOF
-[archlinuxcn]
-Server = http://mirrors.163.com/archlinux/$repo/os/$arch
-Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-SigLevel = Never
-EOF
+echo 'Server = http://mirrors.163.com/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+echo 'Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
+echo 'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
 
 # 修复 not found GLIBC_2.33
 patched_glibc=glibc-linux4-2.33-4-x86_64.pkg.tar.zst
